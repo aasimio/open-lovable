@@ -16,7 +16,7 @@ export const appConfig = {
     devPort: 3000,
 
     // Time to wait for dev server to be ready (in milliseconds)
-    devServerStartupDelay: 7000,
+    devServerStartupDelay: 12000,
 
     // Time to wait for CSS rebuild (in milliseconds)
     cssRebuildDelay: 2000,

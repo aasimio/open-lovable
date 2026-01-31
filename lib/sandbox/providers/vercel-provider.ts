@@ -1,5 +1,6 @@
 import { Sandbox } from '@vercel/sandbox';
 import { SandboxProvider, SandboxInfo, CommandResult } from '../types';
+import appConfig from '@/config/app.config';
 // SandboxProviderConfig available through parent class
 
 export class VercelProvider extends SandboxProvider {
@@ -531,7 +532,7 @@ body {
     // Vite server started in background
     
     // Wait for Vite to be ready
-    await new Promise(resolve => setTimeout(resolve, 7000));
+    await new Promise(resolve => setTimeout(resolve, appConfig.vercelSandbox.devServerStartupDelay));
     
     // Track initial files
     this.existingFiles.add('src/App.jsx');
@@ -571,7 +572,7 @@ body {
     // Vite server started in background
     
     // Wait for Vite to be ready
-    await new Promise(resolve => setTimeout(resolve, 7000));
+    await new Promise(resolve => setTimeout(resolve, appConfig.vercelSandbox.devServerStartupDelay));
   }
 
   getSandboxUrl(): string | null {
